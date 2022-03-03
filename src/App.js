@@ -114,6 +114,11 @@ function App() {
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  getUsers(username);
+                }
+              }}
               placeholder="Search GitHub username..."
               type="text"
               id="search-input"
