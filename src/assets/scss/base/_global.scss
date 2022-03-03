@@ -82,6 +82,7 @@ body {
 
 .main {
   .search {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,6 +96,22 @@ body {
 
     &:focus-within {
       outline: 0.1rem solid var(--clr-1);
+    }
+
+    .error-text {
+      color: red;
+      font-size: var(--fs-h4);
+      line-height: var(--lh-h4);
+      font-weight: var(--fw-400);
+
+      position: absolute;
+      right: 7rem;
+
+      display: none;
+    }
+
+    .display-error {
+      display: inline-block;
     }
 
     input {
@@ -149,6 +166,7 @@ body {
       height: 4.5rem;
       border-radius: 50%;
       background-color: var(--clr-3);
+      overflow: hidden;
 
       align-self: center;
       // justify-self: center;
@@ -177,6 +195,10 @@ body {
 
     .user-detail {
       grid-area: detail;
+
+      .not-available {
+        opacity: 0.5;
+      }
 
       .des {
         font-weight: var(--fw-400);
@@ -219,6 +241,10 @@ body {
         flex-direction: column;
         gap: 0.5rem;
 
+        .not-available {
+          opacity: 0.5;
+        }
+
         li {
           display: flex;
           gap: 1rem;
@@ -235,6 +261,7 @@ body {
             filter: invert(0) brightness(1);
           }
         }
+
         @media (min-width: 48em) {
           flex-direction: row;
           flex-wrap: wrap;
